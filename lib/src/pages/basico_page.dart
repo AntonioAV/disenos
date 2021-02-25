@@ -7,11 +7,14 @@ class BasicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           _crearImagen(),
           _crearTitulo(),
           _crearAcciones(),
+          _crearTexto(),
+          _crearTexto(),
+          _crearTexto(),
         ],
       ),
     );
@@ -88,6 +91,15 @@ class BasicoPage extends StatelessWidget {
           style: TextStyle(fontSize: 15.0, color: Colors.blue),
         ),
       ],
+    );
+  }
+
+  Widget _crearTexto() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+      child: Text(
+        'Sit nostrud do et magna id dolor tempor. Nostrud anim do commodo ex. Est veniam laboris consectetur sunt dolor. Tempor excepteur labore qui irure laboris mollit ipsum consequat id magna.Sit nostrud do et magna id dolor tempor. Nostrud anim do commodo ex. Est veniam laboris consectetur sunt dolor. Tempor excepteur labore qui irure laboris mollit ipsum consequat id magna.',
+      ),
     );
   }
 
