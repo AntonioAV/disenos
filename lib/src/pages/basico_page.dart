@@ -11,6 +11,7 @@ class BasicoPage extends StatelessWidget {
         children: [
           _crearImagen(),
           _crearTitulo(),
+          _crearAcciones(),
         ],
       ),
     );
@@ -59,5 +60,36 @@ class BasicoPage extends StatelessWidget {
       ),
     );
   }
-}
+
+  Widget _crearAcciones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        _accion(Icons.call, 'CALL'),
+        _accion(Icons.near_me, 'ROUTE'),
+        _accion(Icons.share, 'SHARE'),
+      ],
+    );
+  }
+
+  Widget _accion(IconData icon, String texto) {
+    return Column(
+      children: [
+        Icon(
+          icon,
+          color: Colors.blue,
+          size: 35.0,
+        ),
+        SizedBox(
+          height: 6.0,
+        ),
+        Text(
+          texto,
+          style: TextStyle(fontSize: 15.0, color: Colors.blue),
+        ),
+      ],
+    );
+  }
+
 ///////////////////////////////////////////////
+}
