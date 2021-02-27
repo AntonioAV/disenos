@@ -4,9 +4,25 @@ class ScrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Scroll Page'),
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        children: [
+          _pagina1(),
+          _pagina2(),
+        ],
       ),
+    );
+  }
+
+  Widget _pagina1() {
+    return Center(
+      child: Text('Página 1'),
+    );
+  }
+
+  Widget _pagina2() {
+    return Center(
+      child: Text('Página 2'),
     );
   }
 }
