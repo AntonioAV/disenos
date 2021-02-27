@@ -15,14 +15,33 @@ class ScrollPage extends StatelessWidget {
   }
 
   Widget _pagina1() {
-    return Center(
-      child: Text('Página 1'),
+    return Stack(
+      children: [_colorFondo(), _imagenFondo()],
     );
   }
 
   Widget _pagina2() {
     return Center(
       child: Text('Página 2'),
+    );
+  }
+
+  Widget _colorFondo() {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: Color.fromRGBO(108, 192, 218, 1.0),
+    );
+  }
+
+  Widget _imagenFondo() {
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Image(
+        image: AssetImage('assets/scroll-1.png'),
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
