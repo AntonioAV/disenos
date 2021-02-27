@@ -16,7 +16,11 @@ class ScrollPage extends StatelessWidget {
 
   Widget _pagina1() {
     return Stack(
-      children: [_colorFondo(), _imagenFondo()],
+      children: [
+        _colorFondo(),
+        _imagenFondo(),
+        _textos(),
+      ],
     );
   }
 
@@ -41,6 +45,33 @@ class ScrollPage extends StatelessWidget {
       child: Image(
         image: AssetImage('assets/scroll-1.png'),
         fit: BoxFit.cover,
+      ),
+    );
+  }
+
+  Widget _textos() {
+    final estiloTexto = TextStyle(color: Colors.white, fontSize: 50.0);
+    return SafeArea(
+      child: Column(
+        children: [
+          SizedBox(height: 20.0),
+          Text(
+            '11°',
+            style: estiloTexto,
+          ),
+          Text(
+            'Miércoles',
+            style: estiloTexto,
+          ),
+          Expanded(
+            child: Container(),
+          ),
+          Icon(
+            Icons.keyboard_arrow_down,
+            size: 70.0,
+            color: Colors.white,
+          )
+        ],
       ),
     );
   }
