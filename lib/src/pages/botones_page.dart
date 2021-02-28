@@ -51,6 +51,7 @@ class BotonesPage extends StatelessWidget {
         gradiente,
         Positioned(
           top: -100.0,
+          left: -15.0,
           child: cajaRosa,
         ),
       ],
