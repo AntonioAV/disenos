@@ -12,6 +12,7 @@ class BotonesPage extends StatelessWidget {
             child: Column(
               children: [
                 _titulos(),
+                _botonesRedondeados(),
               ],
             ),
           )
@@ -123,6 +124,19 @@ class BotonesPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  _botonesRedondeados() {
+    return Table(
+      children: [
+        TableRow(
+          children: [
+            Text('Item'),
+            Text('Item'),
+          ],
+        ),
+      ],
     );
   }
 }
