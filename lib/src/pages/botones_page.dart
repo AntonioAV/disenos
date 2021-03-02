@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -132,11 +134,54 @@ class BotonesPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            Text('Item'),
-            Text('Item'),
+            _crearBotonRedondeado(),
+            _crearBotonRedondeado(),
           ],
         ),
       ],
+    );
+  }
+
+  Widget _crearBotonRedondeado() {
+    return Container(
+      height: 180.0,
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(62, 66, 107, 0.70),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SizedBox(
+                height: 5.0,
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.pinkAccent,
+                radius: 35.0,
+                child: Icon(
+                  Icons.swap_calls,
+                  color: Colors.white,
+                  size: 30.0,
+                ),
+              ),
+              Text(
+                'Cosa',
+                style: TextStyle(
+                  color: Colors.pinkAccent,
+                  fontSize: 20.0,
+                ),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
