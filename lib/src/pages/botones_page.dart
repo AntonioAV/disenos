@@ -134,23 +134,38 @@ class BotonesPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado(),
-            _crearBotonRedondeado(),
+            _crearBotonRedondeado(Colors.blue, Icons.border_all, "General"),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.directions_bus, "Bus"),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(Colors.blue, Icons.border_all, "General"),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.directions_bus, "Bus"),
+          ],
+        ),
+        TableRow(
+          children: [
+            _crearBotonRedondeado(Colors.blue, Icons.border_all, "General"),
+            _crearBotonRedondeado(
+                Colors.purpleAccent, Icons.directions_bus, "Bus"),
           ],
         ),
       ],
     );
   }
 
-  Widget _crearBotonRedondeado() {
+  Widget _crearBotonRedondeado(Color color, IconData icono, String texto) {
     return Container(
-      margin: EdgeInsets.all(15.0),
+      margin: EdgeInsets.all(10.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
           child: Container(
-            height: 180.0,
+            height: 160.0,
             decoration: BoxDecoration(
               color: Color.fromRGBO(62, 66, 107, 0.70),
             ),
@@ -163,18 +178,18 @@ class BotonesPage extends StatelessWidget {
                     height: 5.0,
                   ),
                   CircleAvatar(
-                    backgroundColor: Colors.pinkAccent,
+                    backgroundColor: color,
                     radius: 35.0,
                     child: Icon(
-                      Icons.swap_calls,
+                      icono,
                       color: Colors.white,
                       size: 30.0,
                     ),
                   ),
                   Text(
-                    'Cosa',
+                    texto,
                     style: TextStyle(
-                      color: Colors.pinkAccent,
+                      color: color,
                       fontSize: 20.0,
                     ),
                   ),
